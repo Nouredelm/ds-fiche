@@ -118,7 +118,7 @@ a:hover { text-decoration: underline; }
 <main>
 
 <!-- HTML -->
-<div class="card html" id="html">
+<section class="card html" id="html">
     <div class="icon">🌐</div>
     <h2>HTML</h2>
     <p><strong>HyperText Markup Language</strong> est le pilier du Web. Créé en 1991 par <strong>Tim Berners-Lee</strong>, il permet d’organiser le contenu en éléments hiérarchiques : titres, paragraphes, liens, tableaux, formulaires, etc. Les dernières versions (HTML5) ajoutent des éléments multimédias et sémantiques comme <code>&lt;video&gt;</code>, <code>&lt;header&gt;</code> ou <code>&lt;article&gt;</code>.</p>
@@ -140,17 +140,17 @@ a:hover { text-decoration: underline; }
         <li><a href="https://www.freecodecamp.org/">FreeCodeCamp – Tutoriels HTML</a></li>
         <li><a href="https://www.w3schools.com/html/default.asp">W3Schools – Tutoriels HTML</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Duckett, J. (2011). <em>HTML and CSS: Design and Build Websites</em>. Wiley.</li>
         <li>Keith, J. (2010). <em>HTML5 for Web Designers</em>. A Book Apart.</li>
         <li>Freeman, E., & Robson, E. (2015). <em>Head First HTML and CSS</em>. O'Reilly.</li>
         <li>Pilgrim, M. (2010). <em>HTML5: Up and Running</em>. O'Reilly Media.</li>
     </ul>
-</div>
+</section>
 
 <!-- XML -->
-<div class="card xml" id="xml">
+<section class="card xml" id="xml">
     <div class="icon">📦</div>
     <h2>XML</h2>
     <p><strong>Extensible Markup Language</strong> (1998, W3C) est conçu pour structurer et échanger des données. Il ne définit pas de balises fixes, mais permet aux utilisateurs d’en créer selon leurs besoins. XML est omniprésent dans les formats <code>.docx</code>, <code>.svg</code>, <code>.rss</code> et les projets scientifiques utilisant TEI.</p>
@@ -168,26 +168,29 @@ a:hover { text-decoration: underline; }
         <li><a href="https://xmlgrid.net/">XML Grid Editor</a></li>
         <li><a href="https://www.w3schools.com/xml/default.asp">W3Schools – Tutoriels XML</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Harold, E. R., & Means, W. S. (2004). <em>XML in a Nutshell</em> (3rd ed.). O'Reilly.</li>
         <li>Goldfarb, C. F., & Prescod, P. (2000). <em>The XML Handbook</em>. Prentice Hall.</li>
         <li>Kay, M. (2008). <em>XSLT 2.0 and XPath 2.0 Programmer’s Reference</em>. Wiley.</li>
         <li>Bray, T. et al. (2008). <em>Extensible Markup Language (XML) 1.0 Specification</em>. W3C.</li>
     </ul>
-</div>
+</section>
 
 <!-- JSON -->
-<div class="card json" id="json">
+<section class="card json" id="json">
     <div class="icon">🧩</div>
     <h2>JSON</h2>
     <p><strong>JavaScript Object Notation</strong> est un format de données textuel standardisé, léger et lisible par l’humain. Il est aujourd’hui incontournable dans les API REST, les configurations (Node.js, React) et les bases NoSQL comme MongoDB.</p>
     <pre><code>{
-  "personne": {
-    "nom": "Dupont",
-    "âge": 30,
-    "intérêts": ["musique", "lecture", "voyage"]
+  "bibliographie": {
+    "livre": {
+      "titre": "Les Misérables",
+      "auteur": "Victor Hugo",
+      "année": 1862
+    }
   }
+}
 }</code></pre>
     <h4>Outils & Ressources</h4>
     <ul>
@@ -197,45 +200,50 @@ a:hover { text-decoration: underline; }
         <li><a href="https://mockaroo.com/">Mockaroo (générateur de JSON)</a></li>
         <li><a href="https://www.w3schools.com/whatis/whatis_json.asp">W3Schools – Tutoriels JSON</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Crockford, D. (2006). <em>The Application/JSON Media Type</em>. RFC 4627.</li>
         <li>Haverbeke, M. (2018). <em>Eloquent JavaScript</em>. No Starch Press.</li>
         <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
         <li>Williams, G. (2017). <em>Data Wrangling with JavaScript</em>. Pragmatic Bookshelf.</li>
     </ul>
-</div>
+</section>
 
 <!-- Markdown -->
-<div class="card md" id="markdown">
+<section class="card md" id="markdown">
     <div class="icon">📝</div>
     <h2>Markdown</h2>
     <p>Créé par <strong>John Gruber</strong> (2004), Markdown est un langage de balisage léger facilitant la rédaction structurée pour le Web. Utilisé sur GitHub, Reddit ou les blogs Jekyll, il convertit facilement vers HTML, PDF ou DOCX via <a href="https://pandoc.org/">Pandoc</a>.</p>
-    <pre><code># Mon premier document Markdown
-Bienvenue dans **Markdown**, un langage *simple et efficace*.
+    <pre><code>
+# Titre de niveau 1
+## h2 Titre de niveau 2
+### h3 Titre de niveau 3
+**Texte en gras**
+*Texte en italic*
+> Citation (blockquote)
+[ceci est un lien](https://www.example.com)
+![ceci est une image](image.jpg)
+</code></pre>
 
-## Liste de tâches
-- [x] Créer un titre
-- [x] Ajouter du texte
-- [ ] Convertir en HTML</code></pre>
     <h4>Outils & Ressources</h4>
     <ul>
-        <li><a href="https://daringfireball.net/projects/markdown/">Markdown Original</a></li>
+       	<li><a href="https://www.markdownguide.org">Documentation officielle Markdown</a></li>
+	<li><a href="https://daringfireball.net/projects/markdown/">Markdown Original</a></li>
         <li><a href="https://commonmark.org/">CommonMark Standard</a></li>
         <li><a href="https://typora.io/">Typora</a></li>
         <li><a href="https://stackedit.io/">StackEdit</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Gruber, J. (2004). <em>Markdown Syntax Documentation</em>. Daring Fireball.</li>
         <li>MacFarlane, J. (2021). <em>Pandoc User’s Guide</em>. Pandoc.org.</li>
         <li>Wilson, K. (2017). <em>Modern Technical Writing</em>. Kindle Edition.</li>
         <li>Atwood, J. (2008). <em>How to Write for the Web</em>. Coding Horror Blog.</li>
     </ul>
-</div>
+</section>
 
 <!-- LaTeX -->
-<div class="card latex" id="latex">
+<section class="card latex" id="latex">
     <div class="icon">🔢</div>
     <h2>LaTeX</h2>
     <p><strong>LaTeX</strong>, développé par <strong>Leslie Lamport</strong> sur la base de TeX (Donald Knuth), est le standard de la composition scientifique. Il permet de gérer bibliographies, équations et figures avec une précision typographique inégalée.</p>
@@ -253,18 +261,19 @@ L’équation d’Euler : $e^{i\pi} + 1 = 0$
         <li><a href="https://www.overleaf.com/learn">Overleaf Docs</a></li>
         <li><a href="https://tex.stackexchange.com/">TeX StackExchange</a></li>
         <li><a href="https://ctan.org/">CTAN Archive</a></li>
+        <li><a https://latexref.xyz/dev/">LaTeX2e reference manual</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Lamport, L. (1994). <em>LaTeX: A Document Preparation System</em>. Addison-Wesley.</li>
         <li>Mittelbach, F. (2004). <em>The LaTeX Companion</em> (2nd ed.). Addison-Wesley.</li>
         <li>Kottwitz, S. (2015). <em>LaTeX Beginner’s Guide</em>. Packt Publishing.</li>
         <li>Knuth, D. E. (1984). <em>The TeXbook</em>. Addison-Wesley.</li>
     </ul>
-</div>
+</section>
 
 <!-- CSS -->
-<div class="card css" id="css">
+<section class="card css" id="css">
     <div class="icon">🎨</div>
     <h2>CSS</h2>
     <p><strong>Cascading Style Sheets</strong> (1996, Håkon Lie & Bert Bos) définissent la présentation visuelle du contenu HTML. CSS3 permet animations, transitions et responsive design via les Media Queries et frameworks comme Bootstrap ou Tailwind.</p>
@@ -285,14 +294,14 @@ h1 {
         <li><a href="https://getbootstrap.com/">Bootstrap Framework</a></li>
         <li><a href="https://www.w3schools.com/css/default.asp">W3Schools – Tutoriels CSS</a></li>
     </ul>
-    <h4>Références bibliographiques</h4>
+    <h4>Références</h4>
     <ul>
         <li>Keith, J. (2010). <em>HTML5 for Web Designers</em>. A Book Apart.</li>
         <li>Meyer, E. (2006). <em>CSS: The Definitive Guide</em>. O’Reilly Media.</li>
         <li>Cederholm, D. (2010). <em>CSS3 for Web Designers</em>. A Book Apart.</li>
         <li>Marcotte, E. (2011). <em>Responsive Web Design</em>. A Book Apart.</li>
     </ul>
-</div>
+</section>
 
 </main>
 
