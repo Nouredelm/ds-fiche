@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Langages de structuration de contenus</title>
+    <title>Langages de structuration de contenus - Fiches Détaillées</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 /* === STYLE GLOBAL === */
@@ -25,6 +25,7 @@ header h2 { font-weight: 300; color: #dee2e6; }
 nav {
     background-color: #343a40;
     display: flex;
+    flex-wrap: wrap; 
     justify-content: center;
     padding: 0.5rem;
 }
@@ -54,15 +55,24 @@ main {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 6px solid #0071CF;
+    display: flex;
+    flex-direction: column;
 }
 .card:hover {
-    transform: translateY(-10px);
+    transform: none; 
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 .card h2 {
     text-align: center;
     color: #0071CF;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+.card h3 { 
+    color: #0071CF;
+    border-bottom: 2px solid #0071CF;
+    padding-bottom: 0.3rem;
+    margin-top: 1.5rem;
 }
 .card h4 {
     color: #800000;
@@ -75,6 +85,7 @@ pre {
     border-radius: 8px;
     font-family: "Fira Code", monospace;
     overflow-x: auto;
+    margin-bottom: 1.5rem;
 }
 footer {
     background-color: #212529;
@@ -97,13 +108,24 @@ a:hover { text-decoration: underline; }
 .md { border-top-color: #6f42c1; }
 .latex { border-top-color: #d63384; }
 .css { border-top-color: #0dcaf0; }
+
+/* Nouveau style pour les listes de concepts */
+.card ul:not(.resources) {
+    list-style-type: '👉 '; 
+    padding-left: 1.5rem;
+}
+.card ul.resources {
+    list-style-type: '🔗 '; 
+    margin-top: 0.5rem; 
+}
+.card ul.resources li { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Langages de structuration de contenus</h1>
-    <h2>Fiches détaillées, exemples pratiques et ressources de référence</h2>
+    <h2>Fiches détaillées, exemples pratiques et ressources de référence pour les étudiants</h2>
 </header>
 
 <nav>
@@ -117,198 +139,276 @@ a:hover { text-decoration: underline; }
 
 <main>
 
-<!-- HTML -->
 <section class="card html" id="html">
     <div class="icon">🌐</div>
     <h2>HTML</h2>
-    <p><strong>HyperText Markup Language</strong> est le pilier du Web. Créé en 1991 par <strong>Tim Berners-Lee</strong>, il permet d’organiser le contenu en éléments hiérarchiques : titres, paragraphes, liens, tableaux, formulaires, etc. Les dernières versions (HTML5) ajoutent des éléments multimédias et sémantiques comme <code>&lt;video&gt;</code>, <code>&lt;header&gt;</code> ou <code>&lt;article&gt;</code>.</p>
+    <p><strong>HyperText Markup Language</strong> est le pilier du Web. Créé en 1991 par **Tim Berners-Lee**, il permet d’organiser le contenu en éléments hiérarchiques : titres, paragraphes, liens, tableaux, formulaires, etc. Les dernières versions (**HTML5**) ajoutent des éléments multimédias et sémantiques comme <code>&lt;video&gt;</code>, <code>&lt;header&gt;</code> ou <code>&lt;article&gt;</code>, améliorant l'accessibilité et le référencement.</p>
+    
+    <h3>Exemple Pratique (HTML5)</h3>
     <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="fr"&gt;
   &lt;head&gt;
-    &lt;title&gt;Exemple HTML&lt;/title&gt;
+    &lt;title&gt;Exemple HTML Sémantique&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;
-    &lt;p&gt;Ceci est un paragraphe illustrant la structure HTML.&lt;/p&gt;
+    &lt;header&gt;&lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;
+      &lt;article&gt;
+        &lt;p&gt;Ceci est un paragraphe illustrant la structure HTML sémantique.&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-    <h4>Outils & Ressources</h4>
+
+    <h3>Concepts Clés</h3>
     <ul>
-        <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">MDN Web Docs</a></li>
-        <li><a href="https://html.spec.whatwg.org/">WHATWG Living Standard</a></li>
-        <li><a href="https://validator.w3.org/">W3C Markup Validator</a></li>
-        <li><a href="https://www.freecodecamp.org/">FreeCodeCamp – Tutoriels HTML</a></li>
-        <li><a href="https://www.w3schools.com/html/default.asp">W3Schools – Tutoriels HTML</a></li>
+        <li>**Balises (Tags)** : Des marqueurs délimitant les éléments (ex: <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>).</li>
+        <li>**Éléments** : Un ensemble formé par une balise ouvrante, son contenu et une balise fermante (ou seule si auto-fermante, ex: <code>&lt;img&gt;</code>).</li>
+        <li>**Attributs** : Fournissent des informations supplémentaires sur l'élément (ex: <code>href</code>, <code>src</code>, <code>class</code>).</li>
+        <li>**DOM (Document Object Model)** : La représentation en arbre de la structure HTML, essentielle pour le JavaScript.</li>
+        <li>**Sémantique** : Utiliser les balises pour donner du sens au contenu (ex: <code>&lt;nav&gt;</code> pour la navigation au lieu d'un simple <code>&lt;div&gt;</code>).</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Duckett, J. (2011). <em>HTML and CSS: Design and Build Websites</em>. Wiley.</li>
-        <li>Keith, J. (2010). <em>HTML5 for Web Designers</em>. A Book Apart.</li>
-        <li>Freeman, E., & Robson, E. (2015). <em>Head First HTML and CSS</em>. O'Reilly.</li>
-        <li>Pilgrim, M. (2010). <em>HTML5: Up and Running</em>. O'Reilly Media.</li>
+        <li>**Développement Web** : Création de la structure de base de toute page internet.</li>
+        <li>**Accessibilité** : Fournit une structure lisible par les lecteurs d'écran.</li>
+        <li>**Référencement (SEO)** : La bonne hiérarchie des titres (H1, H2) est cruciale.</li>
+    </ul>
+    
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">**MDN Web Docs**</a> : Référence complète et incontournable.</li>
+        <li><a href="https://html.spec.whatwg.org/multipage/">**WHATWG HTML Living Standard**</a> : La spécification la plus récente et active.</li>
+        <li><a href="https://validator.w3.org/">W3C Markup Validator</a> : Outil officiel pour vérifier la validité syntaxique.</li>
+        <li><a href="https://www.w3schools.com/html/default.asp">W3Schools – Tutoriels HTML</a> : Tutoriels pour débutants.</li>
     </ul>
 </section>
 
-<!-- XML -->
 <section class="card xml" id="xml">
     <div class="icon">📦</div>
     <h2>XML</h2>
-    <p><strong>Extensible Markup Language</strong> (1998, W3C) est conçu pour structurer et échanger des données. Il ne définit pas de balises fixes, mais permet aux utilisateurs d’en créer selon leurs besoins. XML est omniprésent dans les formats <code>.docx</code>, <code>.svg</code>, <code>.rss</code> et les projets scientifiques utilisant TEI.</p>
+    <p>**Extensible Markup Language** (1998, W3C) est conçu pour **structurer, stocker et échanger des données**. Contrairement à HTML, il ne définit pas de balises fixes, mais permet aux utilisateurs d’en **créer sur mesure** selon leurs besoins (d'où le terme "Extensible"). XML requiert une structure stricte et bien formée, souvent validée par un **DTD** ou un **Schéma XSD**.</p>
+    
+    <h3>Exemple Pratique (Données Structurées)</h3>
     <pre><code>&lt;bibliographie&gt;
-  &lt;livre titre="Les Misérables"&gt;
-    &lt;auteur&gt;Victor Hugo&lt;/auteur&gt;
+  &lt;livre id="miserables"&gt;
+    &lt;auteur nom="Hugo" prenom="Victor"&gt;Victor Hugo&lt;/auteur&gt;
+    &lt;titre&gt;Les Misérables&lt;/titre&gt;
     &lt;année&gt;1862&lt;/année&gt;
   &lt;/livre&gt;
+  &lt;!-- L'attribut 'id' améliore l'identification des données --&gt;
 &lt;/bibliographie&gt;</code></pre>
-    <h4>Outils & Ressources</h4>
+
+    <h3>Concepts Clés</h3>
     <ul>
-        <li><a href="https://www.w3.org/XML/">W3C XML Specification</a></li>
-        <li><a href="https://tei-c.org/">TEI Consortium</a></li>
-        <li><a href="https://www.oxygenxml.com/">Oxygen XML Editor</a></li>
-        <li><a href="https://xmlgrid.net/">XML Grid Editor</a></li>
-        <li><a href="https://www.w3schools.com/xml/default.asp">W3Schools – Tutoriels XML</a></li>
+        <li>**Extensibilité** : Les utilisateurs définissent leurs propres balises.</li>
+        <li>**Balises Définies par l'Utilisateur** : Elles doivent suivre des règles de nommage strictes.</li>
+        <li>**Document Bien Formé** : Respect des règles syntaxiques de base (une seule racine, balises bien imbriquées et fermées).</li>
+        <li>**Document Valide** : Respect des règles de structure d'un Schéma (XSD) ou d'une Définition de Type de Document (DTD).</li>
+        <li>**XPath / XSLT** : Langages clés pour naviguer dans l'arbre XML (XPath) et le transformer (XSLT).</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Harold, E. R., & Means, W. S. (2004). <em>XML in a Nutshell</em> (3rd ed.). O'Reilly.</li>
-        <li>Goldfarb, C. F., & Prescod, P. (2000). <em>The XML Handbook</em>. Prentice Hall.</li>
-        <li>Kay, M. (2008). <em>XSLT 2.0 and XPath 2.0 Programmer’s Reference</em>. Wiley.</li>
-        <li>Bray, T. et al. (2008). <em>Extensible Markup Language (XML) 1.0 Specification</em>. W3C.</li>
+        <li>**Échange de Données Inter-systèmes** : Partage de données complexe et hiérarchique entre applications.</li>
+        <li>**Formats de Documents** : Utilisé dans les formats bureautiques (`.docx`, `.odt`) ou vectoriels (`.svg`).</li>
+        <li>**Édition Scientifique/Numérique** : Projets utilisant la **TEI** (Text Encoding Initiative).</li>
+    </ul>
+
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://www.w3.org/XML/">**W3C XML Specification**</a> : Les standards officiels.</li>
+        <li><a href="https://www.w3.org/standards/xml/schema">**XML Schema (XSD)**</a> : Documentation sur les schémas de validation.</li>
+        <li><a href="https://tei-c.org/">TEI Consortium</a> : Norme pour l'encodage de textes littéraires et linguistiques.</li>
+        <li><a href="https://www.oxygenxml.com/">Oxygen XML Editor</a> : Éditeur XML professionnel (souvent utilisé dans l'académique).</li>
     </ul>
 </section>
 
-<!-- JSON -->
 <section class="card json" id="json">
     <div class="icon">🧩</div>
     <h2>JSON</h2>
-    <p><strong>JavaScript Object Notation</strong> est un format de données textuel standardisé, léger et lisible par l’humain. Il est aujourd’hui incontournable dans les API REST, les configurations (Node.js, React) et les bases NoSQL comme MongoDB.</p>
+    <p>**JavaScript Object Notation** est un format de données textuel **léger et universel** utilisé pour l’échange de données. Directement dérivé de la notation objet de JavaScript, il est indépendant de la langue et incroyablement facile à analyser (*parser*) par la plupart des langages de programmation. Il privilégie la **simplicité et la rapidité** par rapport à la verbosité de XML.</p>
+    
+    <h3>Exemple Pratique (Échange de Données)</h3>
     <pre><code>{
   "bibliographie": {
     "livre": {
       "titre": "Les Misérables",
       "auteur": "Victor Hugo",
-      "année": 1862
+      "année": 1862,
+      "editions": [
+        {"année": 1862, "lieu": "Paris"},
+        {"année": 2000, "lieu": "Poche"}
+      ]
     }
   }
-}
 }</code></pre>
-    <h4>Outils & Ressources</h4>
+
+    <h3>Concepts Clés</h3>
     <ul>
-        <li><a href="https://www.json.org/json-fr.html">JSON.org</a></li>
-        <li><a href="https://jsonlint.com/">JSONLint Validator</a></li>
-        <li><a href="https://jqplay.org/">jq Playground</a></li>
-        <li><a href="https://mockaroo.com/">Mockaroo (générateur de JSON)</a></li>
-        <li><a href="https://www.w3schools.com/whatis/whatis_json.asp">W3Schools – Tutoriels JSON</a></li>
+        <li>**Paires Clé/Valeur** : La structure de base de JSON (ex: `"titre": "Les Misérables"`). La clé est toujours une chaîne.</li>
+        <li>**Objets (Objects)** : Collection de paires clé/valeur, délimitée par des accolades `{}`.</li>
+        <li>**Tableaux (Arrays)** : Listes ordonnées de valeurs, délimitées par des crochets `[]`.</li>
+        <li>**Types de Données** : Supporte les chaînes de caractères, nombres, objets, tableaux, booléens (`true`/`false`) et `null`.</li>
+        <li>**Interopérabilité** : Facilité d'être lu et écrit par n'importe quel langage de programmation moderne.</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Crockford, D. (2006). <em>The Application/JSON Media Type</em>. RFC 4627.</li>
-        <li>Haverbeke, M. (2018). <em>Eloquent JavaScript</em>. No Starch Press.</li>
-        <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
-        <li>Williams, G. (2017). <em>Data Wrangling with JavaScript</em>. Pragmatic Bookshelf.</li>
+        <li>**API REST** : Le format de données standard pour les requêtes et réponses des services web modernes.</li>
+        <li>**Fichiers de Configuration** : Utilisé pour les paramètres d'application (ex: `package.json` dans Node.js).</li>
+        <li>**NoSQL** : Stockage natif des données dans des bases comme MongoDB ou CouchDB.</li>
+    </ul>
+
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://www.json.org/json-fr.html">**JSON.org**</a> : Les spécifications de base.</li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Glossary/JSON">**MDN - Glossaire JSON**</a> : Définitions et usage.</li>
+        <li><a href="https://jsonlint.com/">JSONLint Validator</a> : Outil en ligne pour valider et formater le JSON.</li>
+        <li><a href="https://jqplay.org/">jq Playground</a> : Pour tester des requêtes complexes sur des données JSON.</li>
     </ul>
 </section>
 
-<!-- Markdown -->
 <section class="card md" id="markdown">
     <div class="icon">📝</div>
     <h2>Markdown</h2>
-    <p>Créé par <strong>John Gruber</strong> (2004), Markdown est un langage de balisage léger facilitant la rédaction structurée pour le Web. Utilisé sur GitHub, Reddit ou les blogs Jekyll, il convertit facilement vers HTML, PDF ou DOCX via <a href="https://pandoc.org/">Pandoc</a>.</p>
+    <p>Créé par **John Gruber** (2004), Markdown est un langage de balisage **léger** dont l'objectif principal est d'être **facile à lire et à écrire** dans sa forme brute, tout en étant facilement convertible en HTML. Il est idéal pour la prise de notes rapide, la documentation, et les blogs, car il permet de se concentrer sur le contenu sans se soucier de la syntaxe complexe des balises.</p>
+    
+    <h3>Exemple Pratique (Documentation)</h3>
     <pre><code>
-# Titre de niveau 1
-## Titre de niveau 2
-### Titre de niveau 3
-**Texte en gras**
-*Texte en italic*
-> Citation (blockquote)
-[ceci est un lien](https://www.example.com)
-![ceci est une image](image.jpg)
+# Titre de Niveau 1
+## Principes Clés
+- **Texte en gras** avec deux étoiles.
+- *Texte en italic* avec une étoile.
+
+> Cette citation utilise le bloc-citation.
+
+Pour plus d'infos, visitez [Pandoc](https://pandoc.org/).
 </code></pre>
 
-    <h4>Outils & Ressources</h4>
+    <h3>Concepts Clés</h3>
     <ul>
-       	<li><a href="https://www.markdownguide.org">Documentation officielle Markdown</a></li>
-	<li><a href="https://daringfireball.net/projects/markdown/">Markdown Original</a></li>
-        <li><a href="https://commonmark.org/">CommonMark Standard</a></li>
-        <li><a href="https://typora.io/">Typora</a></li>
-        <li><a href="https://stackedit.io/">StackEdit</a></li>
+        <li>**Balisage Lisible** : Utilisation de caractères non-alphabétiques (ex: `#`, `*`, `>`) pour le formatage.</li>
+        <li>**Conversion** : Conçu pour être transformé en HTML (ou autres formats comme PDF, DOCX) par des outils (le plus célèbre étant **Pandoc**).</li>
+        <li>**Dialectes** : Il existe plusieurs extensions du standard original (ex: **GitHub Flavored Markdown (GFM)**) qui ajoutent des fonctionnalités comme les tableaux ou les cases à cocher.</li>
+        <li>**Simplicité** : La force de Markdown réside dans son nombre limité de syntaxes pour les besoins les plus courants.</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Gruber, J. (2004). <em>Markdown Syntax Documentation</em>. Daring Fireball.</li>
-        <li>MacFarlane, J. (2021). <em>Pandoc User’s Guide</em>. Pandoc.org.</li>
-        <li>Wilson, K. (2017). <em>Modern Technical Writing</em>. Kindle Edition.</li>
-        <li>Atwood, J. (2008). <em>How to Write for the Web</em>. Coding Horror Blog.</li>
+        <li>**Documentation de Code** : Fichiers `README.md` sur GitHub/GitLab.</li>
+        <li>**Blogs & CMS** : Systèmes de gestion de contenu pour une rédaction aisée.</li>
+        <li>**Messagerie Instantanée** : Certains outils de chat (Slack, Discord) utilisent une syntaxe similaire pour le formatage.</li>
+    </ul>
+
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://daringfireball.net/projects/markdown/">**Markdown Original Specification**</a> : La spécification créée par John Gruber.</li>
+        <li><a href="https://commonmark.org/">CommonMark Standard</a> : Une tentative de standardisation pour régler les incohérences.</li>
+        <li><a href="https://pandoc.org/">Pandoc</a> : L'outil de conversion de documents universel le plus puissant.</li>
+        <li><a href="https://www.markdownguide.org">Markdown Guide</a> : Guide complet des syntaxes de base et étendues.</li>
     </ul>
 </section>
 
-<!-- LaTeX -->
 <section class="card latex" id="latex">
     <div class="icon">🔢</div>
     <h2>LaTeX</h2>
-    <p><strong>LaTeX</strong>, développé par <strong>Leslie Lamport</strong> sur la base de TeX (Donald Knuth), est le standard de la composition scientifique. Il permet de gérer bibliographies, équations et figures avec une précision typographique inégalée.</p>
+    <p>**LaTeX**, développé par **Leslie Lamport** sur la base de TeX (**Donald Knuth**), est le **standard de la composition scientifique et technique**. Il ne s'agit pas d'un simple langage de balisage, mais d'un système de préparation de documents qui excelle dans la gestion des **équations complexes**, des **références croisées** (figures, tables) et de la **bibliographie** avec une **qualité typographique** inégalée.</p>
+    
+    <h3>Exemple Pratique (Document Scientifique)</h3>
     <pre><code>\documentclass{article}
 \usepackage{amsmath}
-\title{Introduction à LaTeX}
+\title{Introduction à l'équation}
 \author{N. Elm}
 \begin{document}
 \maketitle
-L’équation d’Euler : $e^{i\pi} + 1 = 0$
+L’équation la plus élégante : 
+$$e^{i\pi} + 1 = 0$$
+L'équation quadratique est $ax^2+bx+c=0$.
 \end{document}</code></pre>
-    <h4>Outils & Ressources</h4>
+
+    <h3>Concepts Clés</h3>
     <ul>
-        <li><a href="https://www.latex-project.org/">The LaTeX Project</a></li>
-        <li><a href="https://www.overleaf.com/learn">Overleaf Docs</a></li>
-        <li><a href="https://tex.stackexchange.com/">TeX StackExchange</a></li>
-        <li><a href="https://ctan.org/">CTAN Archive</a></li>
-        <li><a https://latexref.xyz/dev/">LaTeX2e reference manual</a></li>
+        <li>**Compilation** : Un fichier source (`.tex`) est compilé pour générer un document final (généralement un `.pdf`).</li>
+        <li>**Commandes et Environnements** : Le balisage se fait via des commandes (ex: `\section{...}`) et des environnements (ex: `\begin{document}...\end{document}`).</li>
+        <li>**Classes de Document** : Définit la structure globale du document (ex: `article`, `book`, `report`).</li>
+        <li>**Packages** : Ajout de fonctionnalités spécifiques via la commande `\usepackage{...}` (ex: `amsmath` pour les mathématiques avancées).</li>
+        <li>**Logique vs. Présentation** : L'auteur se concentre sur la structure logique, LaTeX gère la mise en page (positionnement des flottants, césures).</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Lamport, L. (1994). <em>LaTeX: A Document Preparation System</em>. Addison-Wesley.</li>
-        <li>Mittelbach, F. (2004). <em>The LaTeX Companion</em> (2nd ed.). Addison-Wesley.</li>
-        <li>Kottwitz, S. (2015). <em>LaTeX Beginner’s Guide</em>. Packt Publishing.</li>
-        <li>Knuth, D. E. (1984). <em>The TeXbook</em>. Addison-Wesley.</li>
+        <li>**Publications Académiques** : Rédaction de thèses, articles scientifiques et livres.</li>
+        <li>**Formules Mathématiques** : Le meilleur outil pour composer des équations complexes.</li>
+        <li>**Rapports Techniques** : Nécessitant une gestion rigoureuse des références et index.</li>
+    </ul>
+
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://www.latex-project.org/">**The LaTeX Project**</a> : Site officiel et documentation de base.</li>
+        <li><a href="https://www.overleaf.com/learn">Overleaf Docs</a> : Plateforme d'édition en ligne collaborative et excellents tutoriels.</li>
+        <li><a href="https://tex.stackexchange.com/">TeX StackExchange</a> : La communauté de questions/réponses la plus active.</li>
+        <li><a href="https://detexify.kirelabs.org/classify.html">Detexify</a> : Permet de trouver la commande LaTeX d'un symbole en le dessinant.</li>
     </ul>
 </section>
 
-<!-- CSS -->
 <section class="card css" id="css">
     <div class="icon">🎨</div>
     <h2>CSS</h2>
-    <p><strong>Cascading Style Sheets</strong> (1996, Håkon Lie & Bert Bos) définissent la présentation visuelle du contenu HTML. CSS3 permet animations, transitions et responsive design via les Media Queries et frameworks comme Bootstrap ou Tailwind.</p>
-    <pre><code>body {
-  color: #333;
-  background: linear-gradient(#fff, #ddd);
+    <p>**Cascading Style Sheets** (1996, **Håkon Lie** & **Bert Bos**) est un langage de **feuilles de style** qui définit la **présentation visuelle** du contenu structuré par HTML. Il sépare la *structure* (HTML) du *style* (CSS), permettant une maintenance plus facile et une cohérence visuelle sur un grand nombre de pages. **CSS3** a introduit des fonctionnalités avancées (animations, transitions, responsive design via les Media Queries).</p>
+    
+    <h3>Exemple Pratique (Feuille de Style)</h3>
+    <pre><code>/* Sélectionne tous les éléments body */
+body {
+  color: #333; /* Couleur du texte */
+  background: linear-gradient(#fff, #ddd); /* Dégradé de fond */
   font-family: Arial, sans-serif;
 }
+
+/* Sélectionne l'élément h1 */
 h1 {
   color: #0071CF;
   text-align: center;
+  margin-top: 0; /* Suppression de la marge par défaut */
+}
+
+/* Applique à tous les éléments ayant la classe 'alert' */
+.alert {
+  padding: 15px;
+  border: 1px solid red;
 }</code></pre>
-    <h4>Outils & Ressources</h4>
+
+    <h3>Concepts Clés</h3>
     <ul>
-        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS">MDN CSS Reference</a></li>
-        <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
-        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
-        <li><a href="https://getbootstrap.com/">Bootstrap Framework</a></li>
-        <li><a href="https://www.w3schools.com/css/default.asp">W3Schools – Tutoriels CSS</a></li>
+        <li>**Sélecteurs** : Règles permettant de cibler les éléments HTML à styliser (par balise, classe `.`, ID `#`, attribut, etc.).</li>
+        <li>**Règles de Style** : Ensemble de propriétés et de valeurs (ex: `color: blue;`).</li>
+        <li>**Cascade** : Les règles s'appliquent en fonction de l'ordre, de la spécificité du sélecteur et de l'héritage.</li>
+        <li>**Box Model** : Concept fondamental décrivant chaque élément HTML comme une boîte avec `content`, `padding`, `border`, et `margin`. </li>
+        <li>**Responsive Design** : Utilisation des **Media Queries** (`@media`) pour adapter le style en fonction de l'appareil (taille d'écran, impression).</li>
     </ul>
-    <h4>Références</h4>
+
+    <h3>Cas d'Utilisation Typiques</h3>
     <ul>
-        <li>Keith, J. (2010). <em>HTML5 for Web Designers</em>. A Book Apart.</li>
-        <li>Meyer, E. (2006). <em>CSS: The Definitive Guide</em>. O’Reilly Media.</li>
-        <li>Cederholm, D. (2010). <em>CSS3 for Web Designers</em>. A Book Apart.</li>
-        <li>Marcotte, E. (2011). <em>Responsive Web Design</em>. A Book Apart.</li>
+        <li>**Mise en Page** : Positionnement des éléments (Flexbox, Grid Layout).</li>
+        <li>**Identité Visuelle** : Définition des couleurs, typographies et espacements d'un site.</li>
+        <li>**Animations** : Création d'effets visuels pour améliorer l'expérience utilisateur.</li>
+    </ul>
+
+    <h4>Outils & Ressources</h4>
+    <ul class="resources">
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS">**MDN CSS Reference**</a> : Référence complète sur toutes les propriétés CSS.</li>
+        <li><a href="https://css-tricks.com/">CSS-Tricks</a> : Un site de référence pour les tutoriels avancés et les techniques de layout.</li>
+        <li><a href="https://getbootstrap.com/">Bootstrap Framework</a> : Le framework CSS le plus populaire.</li>
+        <li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a> et <a href="https://cssgridgarden.com/">CSS Grid Garden</a> : Jeux pour apprendre Flexbox et Grid Layout.</li>
     </ul>
 </section>
 
 </main>
 
 <footer>
-    <p>© 2025 — Fiches enrichies par <strong>N. ELM</strong> | Langages de structuration de contenus</p>
+    <p>© 2025 — Fiches enrichies pour l'éducation par **N. ELM** | Langages de structuration de contenus</p>
 </footer>
 
 </body>
 </html>
-
